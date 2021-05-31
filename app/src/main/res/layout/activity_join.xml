@@ -4,15 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JoinActivity">
+    android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textView"
+    <!-- 타이틀바 -->
+    <LinearLayout
+        android:id="@+id/Li1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff7a00"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nameEdt"
+        >
+        <TextView
+            android:textColor="#fff"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:text="회원가입"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <!-- //end 타이틀바 -->
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/Li1"
+        android:background="#66bdbdbd"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gline1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"
+        />
+
+    <EditText
+        android:id="@+id/idEdt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="join입니다."
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="@string/hint_id"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/gline1"
+        app:layout_constraintBottom_toTopOf="@id/nameEdt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/nameEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="@string/hint_name"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/idEdt"
+        app:layout_constraintBottom_toTopOf="@id/passEdt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/passEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="@string/hint_pd"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/passChkEdt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameEdt"
+        />
+
+    <EditText
+        android:id="@+id/passChkEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="267dp"
+        android:ems="10"
+        android:hint="@string/hint_pd_chk"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/passEdt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Li2"
+        />
+
+    <!-- 닫기 버튼 -->
+    <LinearLayout
+        android:id="@+id/Li2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/okBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="#ff7a00"
+            android:gravity="center"
+            android:text="@string/btn_ok"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="#ff7a00"
+            android:gravity="center"
+            android:text="@string/btn_cacnel"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:onClick="mOnClose"
+            />
+
+    </LinearLayout>
+    <!--// 닫기 버튼 -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

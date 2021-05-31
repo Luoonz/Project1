@@ -2,7 +2,13 @@
     <string name="app_name">플젝1</string>
     <string name="btn_login">로그인</string>
     <string name="btn_join">회원 가입</string>
+    <string name="btn_cacnel">취소</string>
+    <string name="btn_ok">확인</string>
     <string name="tv_id">ID : </string>
     <string name="tv_pw">PW : </string>
     <string name="tv_user">사용자 %s 님 환영합니다.</string>
+    <string name="hint_id"> 아이디 </string>
+    <string name="hint_name"> 이름 </string>
+    <string name="hint_pd"> 비밀번호 </string>
+    <string name="hint_pd_chk"> 비밀번호 확인 </string>
 </resources>
